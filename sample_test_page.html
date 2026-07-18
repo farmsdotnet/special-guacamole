@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Sample Login Page</title></head>
+<body>
+  <header class="site-header">
+    <a href="/" class="logo">Acme Corp</a>
+    <nav>
+      <a href="/pricing">Pricing</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <form id="login-form" action="/login" method="post">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" data-testid="email-input">
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Password" data-testid="password-input">
+
+      <button type="submit" id="submit-button" class="btn btn-primary">Log In</button>
+      <button type="button" class="btn btn-secondary" aria-label="Forgot password">Forgot password?</button>
+    </form>
+
+    <div class="social-login">
+      <button class="btn btn-google" data-testid="google-login">Continue with Google</button>
+      <button class="btn btn-google" data-testid="apple-login">Continue with Apple</button>
+    </div>
+
+    <select name="language" id="language-select">
+      <option value="en">English</option>
+      <option value="fr">French</option>
+    </select>
+  </main>
+</body>
+</html>

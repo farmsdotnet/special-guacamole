@@ -3,6 +3,7 @@ import re
 import requests
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
+BASE_PATH = r"C:\Dev Projects 2026 [Local]\GIT\ai_qa_framework"
 
 
 def read_file(path):
@@ -12,7 +13,7 @@ def read_file(path):
 
 
 def get_pom_references():
-    pages_dir = "src/pages"
+    pages_dir = os.path.join(BASE_PATH, "src", "pages")
     reference_string = "Available Page Objects and Methods:\n"
     if os.path.exists(pages_dir):
         for file in os.listdir(pages_dir):
@@ -39,6 +40,12 @@ def build_final_script(issue_id, raw_ai_output):
         if not stripped or any(
                 stripped.startswith(x) for x in ["def test_", "import ", "from ", "with sync_playwright"]):
             continue
+
+        # --- PLAYWRIGHT METHOD SANITISER ---
+        # Automatically converts hallucinated page.navigate() calls to valid page.goto()
+        if "page.navigate(" in stripped:
+            stripped = stripped.replace("page.navigate(", "page.goto(")
+
         clean_body_lines.append(stripped)
 
     indented_body = "\n".join([f"            {line}" for line in clean_body_lines])
@@ -63,8 +70,9 @@ def test_{safe_func_id}():
 
 
 def generate_test_case(issue_id):
-    main_skill = read_file("context_store/global_domain_rules.md")
-    child_skill = read_file(f"context_store/child_contexts/{issue_id}_ac.md")
+    main_skill = read_file(os.path.join(BASE_PATH, "context_store", "global_domain_rules.md"))
+    child_skill = read_file(
+        os.path.join(BASE_PATH, "context_store", "child_contexts", f"{issue_id.upper().strip()}_ac.md"))
     pom_reference = get_pom_references()
 
     system_prompt = f"""
@@ -81,8 +89,9 @@ def generate_test_case(issue_id):
         response = requests.post(OLLAMA_URL, json=payload, timeout=60)
         if response.status_code == 200:
             final_code = build_final_script(issue_id, response.json().get("response", ""))
-            os.makedirs("tests/pending_review", exist_ok=True)
-            pending_path = f"tests/pending_review/test_{issue_id.lower().replace('-', '_')}.py"
+            pending_dir = os.path.join(BASE_PATH, "tests", "pending_review")
+            os.makedirs(pending_dir, exist_ok=True)
+            pending_path = os.path.join(pending_dir, f"test_{issue_id.lower().replace('-', '_')}.py")
             with open(pending_path, "w", encoding="utf-8") as f: f.write(final_code)
             return pending_path
     except Exception as e:

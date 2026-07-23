@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3509e951-4685-47c0-863a-c18c039bc311" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/do_not_use.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ai-qa-framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ai-qa-framework.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linear_fetch.py" beforeDir="false" afterPath="$PROJECT_DIR$/linear_fetch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_staging.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_staging.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +31,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "farmsdotnet"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;farmsdotnet&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/farmsdotnet/special-guacamole",
-    "accountId": "fb9987f4-d3cf-4269-a1af-661888eb8729"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/farmsdotnet/special-guacamole&quot;,
+    &quot;accountId&quot;: &quot;fb9987f4-d3cf-4269-a1af-661888eb8729&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -52,8 +58,8 @@
     "Python tests.Python tests for test_tkt-999.test_invalid_login_with_locked_out_user.executor": "Run",
     "Python.run_staging.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "v1.6",
-    "last_opened_file_path": "C:/Dev Projects 2026 [Local]/GIT/ai_qa_framework"
+    "git-widget-placeholder": "ai-qa-pipeline-v1.62",
+    "last_opened_file_path": "C:/Dev Projects 2026 Local/GIT/ai_qa_framework"
   }
 }]]></component>
   <component name="RecentsManager">

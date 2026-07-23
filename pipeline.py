@@ -4,17 +4,19 @@ import requests
 from linear_fetch import save_ac_context
 from generate_test import generate_test_case, read_file, get_pom_references, build_final_script, OLLAMA_URL
 
+BASE_PATH = r"C:\Dev Projects 2026 [Local]\GIT\ai_qa_framework"
+
 
 def regenerate_with_feedback(issue_id, feedback_text, current_code):
-    main_skill = read_file("context_store/global_domain_rules.md")
-    child_skill = read_file(f"context_store/child_contexts/{issue_id}_ac.md")
+    main_skill = read_file(os.path.join(BASE_PATH, "context_store", "global_domain_rules.md"))
+    child_skill = read_file(
+        os.path.join(BASE_PATH, "context_store", "child_contexts", f"{issue_id.upper().strip()}_ac.md"))
     pom_reference = get_pom_references()
 
     refinement_prompt = f"""
     Modify these Playwright test steps based on user feedback.
     Criteria: {child_skill}
     Previous Output: {current_code}
-
     HUMAN FEEDBACK TO APPLY: {feedback_text}
 
     Write ONLY the clean python code steps. Do NOT write a function definition (`def`) or any imports.
@@ -27,13 +29,15 @@ def regenerate_with_feedback(issue_id, feedback_text, current_code):
 
 
 def run_pipeline(issue_id):
-    safe_id = issue_id.lower().replace('-', '_')
-    if issue_id.upper() != "TKT-999":
-        if not save_ac_context(issue_id):
-            print(f"❌ Aborting. Could not sync criteria for {issue_id}")
+    issue_clean = issue_id.upper().strip()
+    safe_id = issue_clean.lower().replace('-', '_')
+
+    if issue_clean != "TKT-999":
+        if not save_ac_context(issue_clean):
+            print(f"❌ Aborting. Could not sync criteria for {issue_clean}")
             return
 
-    pending_file = generate_test_case(issue_id)
+    pending_file = generate_test_case(issue_clean)
     if not pending_file:
         print("❌ Generation failed. No script was compiled.")
         return
@@ -46,8 +50,9 @@ def run_pipeline(issue_id):
         choice = input("\nSelect Action -> [A]pprove | [D]ecline | [S]uggest Changes: ").strip().lower()
 
         if choice == 'a':
-            os.makedirs("tests/staging", exist_ok=True)
-            dest = f"tests/staging/test_{safe_id}.py"
+            staging_dir = os.path.join(BASE_PATH, "tests", "staging")
+            os.makedirs(staging_dir, exist_ok=True)
+            dest = os.path.join(staging_dir, f"test_{safe_id}.py")
             if os.path.exists(dest): os.remove(dest)
             shutil.move(pending_file, dest)
             print(f"🚀 Approved! Saved to live suite: {dest}")
@@ -60,7 +65,7 @@ def run_pipeline(issue_id):
             feedback = input("\n📝 Enter adjustments for the AI: ").strip()
             if feedback:
                 try:
-                    updated_code = regenerate_with_feedback(issue_id, feedback, read_file(pending_file))
+                    updated_code = regenerate_with_feedback(issue_clean, feedback, read_file(pending_file))
                     with open(pending_file, "w", encoding="utf-8") as f:
                         f.write(updated_code)
                 except Exception as e:

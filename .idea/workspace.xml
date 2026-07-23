@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3509e951-4685-47c0-863a-c18c039bc311" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/do_not_use.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ai-qa-framework.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ai-qa-framework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generate_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/linear_fetch.py" beforeDir="false" afterPath="$PROJECT_DIR$/linear_fetch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_staging.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_staging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_structure_tree/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/project_structure_tree/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_structure_tree/future_enhancements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/project_structure_tree/future_enhancements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

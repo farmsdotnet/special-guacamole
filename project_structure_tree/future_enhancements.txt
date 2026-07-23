@@ -6,18 +6,25 @@ Working in v1.6 [23/07/26] Latest 'n' Greatest - minor bugs resolved & tested! H
 4) stores (Approved) test in tests\staging\test_tkt-999.py
 5) run_staging.py executes test
 --
-
-Future Enhancements
-===================
-[scoped for v1.61]
+[Added in v1.62] [23/07/26]
 Live Linear API sync using your token to fetch real ticket acceptance criteria.
 *Note-to-self: (Planning to either integrate my existing Linear_git_snapshot tool or add new functionality to explicitly pull the ac from a given project/board/tkt - pass in as optional args at CL)
 
-[scoped for v1.62]
+Future Enhancements
+===================
+[scoped for v1.63]
 Add capability to Batch automation, to pull down multiple issues at once.
 
 [scoped for v1.7]
 Add GitHub integration
 *Note-to-self: (Probably beneficial to integrate & further develop on existing Linear_git_snapshot tool)
 
-[add additional in future commit!]
+[scoped for v1.8]
+Add Automatic Test Report generation
+*Note-to-self: (Nd to research some practical routes for this via Playwright logs, reports, Allure?
+
+[scoped for v1.9]
+Add Automatic upload of test reports/results to given sharepoint / shared-space
+
+scoped for v2.0]
+Integrate w/ CI/CD pipeline - considering either implementing overnight jobs to run *smoke/reg. test suite* against set/all ver. branches

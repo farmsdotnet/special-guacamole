@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 linear_github_snapshot.py
-COME ON MANE!!!!!! ;) dfddffd
+
 Lightweight CLI that cross-checks Linear tickets (issues) belonging to a given
 Project against the commits present on a given GitHub branch, and writes the
 result to a snapshot.md file. Optionally narrows to a single Project

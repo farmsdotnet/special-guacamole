@@ -1,0 +1,22 @@
+ai-qa-framework/
+│
+├── .env                        # Stores Linear API token, OpenAI keys
+├── main.py                     # CLI tool to run the pipeline (Pull -> Generate -> Review)
+├── requirements.txt            # Dependencies (pytest, playwright, requests, langchain)
+│
+├── context_store/              # The Living Context (Step 5)
+│   ├── global_domain_rules.md  # Main Skill: Business rules & application mapping
+│   └── child_contexts/         # Child Skills: Extracted Linear ACs
+│       └── TKT-101_ac.md
+│
+├── src/                        # The Page Object Model (POM) Structure
+│   ├── pages/
+│   │   ├── base_page.py
+│   │   └── login_page.py       # Human/AI-maintained page objects
+│   └── components/
+│
+└── tests/                      # Pytest Test Suite
+    ├── staging/                # Human-approved, active test cases
+    │   └── test_tkt_101.py
+    └── pending_review/         # AI-generated tests awaiting human approval (Step 4)
+        └── test_tkt_102.py

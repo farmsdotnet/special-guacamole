@@ -1,0 +1,23 @@
+Working in v1.6 [23/07/26] Latest 'n' Greatest - minor bugs resolved & tested! Hi Tasneem
+===============
+1) pulls AC from (existing 'TKT-999.md' file
+2) stores this in context_store\child_contexts\TKT-999_ac.md (also uses Parent 'Global Skills' md file when initiating a test for additional business context, logic, standards etc)
+3) generate_test.py takes the TKT-999.md contents and creates POM style test using Playwright framework
+4) stores (Approved) test in tests\staging\test_tkt-999.py
+5) run_staging.py executes test
+--
+
+Future Enhancements
+===================
+[scoped for v1.61]
+Live Linear API sync using your token to fetch real ticket acceptance criteria.
+*Note-to-self: (Planning to either integrate my existing Linear_git_snapshot tool or add new functionality to explicitly pull the ac from a given project/board/tkt - pass in as optional args at CL)
+
+[scoped for v1.62]
+Add capability to Batch automation, to pull down multiple issues at once.
+
+[scoped for v1.7]
+Add GitHub integration
+*Note-to-self: (Probably beneficial to integrate & further develop on existing Linear_git_snapshot tool)
+
+[add additional in future commit!]
